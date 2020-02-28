@@ -1,0 +1,56 @@
+{
+  "name": "xloop",
+  "version": "0.1.0",
+  "description": "Extended LoopBack",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "clean": "lb-clean xloop*.tgz dist tsconfig.build.tsbuildinfo package",
+    "pretest": "npm run build",
+    "test": "lb-mocha \"dist/__tests__/**/*.js\"",
+    "prettier:fix": "npm run prettier:cli -- --write && npm run format-imports",
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
+    "format-imports": "cross-env import-sort --write '**/*.{ts,tsx}'",
+    "verify": "npm pack && tar xf xloop*.tgz && tree package && npm run clean"
+  },
+  "author": "Doray <me@doray.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "@loopback/context": "^2.1.1",
+    "@loopback/core": "^1.12.4",
+    "@loopback/rest": "^2.0.0",
+    "tslib": "^1.11.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@loopback/build": "^3.1.1",
+    "@loopback/eslint-config": "^5.0.3",
+    "@loopback/testlab": "^1.10.3",
+    "@types/node": "^10.17.16",
+    "cross-env": "^7.0.0",
+    "import-sort": "^6.0.0",
+    "import-sort-cli": "^6.0.0",
+    "import-sort-parser-babylon": "^6.0.0",
+    "import-sort-parser-typescript": "^6.0.0",
+    "import-sort-style-module": "^6.0.0"
+  },
+  "keywords": [
+    "LoopBack",
+    "Extended",
+    "Decorators"
+  ],
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dorayx/xloop.git"
+  }
+}
