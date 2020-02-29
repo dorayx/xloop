@@ -1,5 +1,7 @@
 # xloop
 
+![npm](https://img.shields.io/npm/v/xloop) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dorayx/xloop/Testing)
+
 Add sugar & enhanced APIs inspired by NestJS to Loopback v4
 
 ## Installation
