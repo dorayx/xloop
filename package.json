@@ -1,7 +1,7 @@
 {
   "name": "xloop",
   "version": "0.1.2",
-  "description": "Extended LoopBack",
+  "description": "Add sugar & enhanced APIs inspired by NestJS to Loopback v4",
   "main": "dist/index.js",
   "engines": {
     "node": ">=10"
