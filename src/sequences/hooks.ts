@@ -1,4 +1,4 @@
-import {nullOrDefault} from "../utils/nullOrDefault";
+import {nullOrValue} from '../utils/nullOrValue';
 
 const container: HooksContainer = {
   presend: [],
@@ -18,7 +18,7 @@ for (const key of keys) {
     run: async function(result: any, context: any) {
       const all = container[key];
       for await (const fn of all) {
-        result = nullOrDefault(await fn.call(this, result, context), result);
+        result = nullOrValue(await fn.call(this, result, context), result);
       }
       return result;
     },
